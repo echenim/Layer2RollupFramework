@@ -55,7 +55,7 @@ Design and architect a production-grade, scalable rollup framework optimized for
 ---
 
 ```plaintext
-scalable-rollup-framework/
+
 ├── contracts/          # Solidity smart contracts
 │   ├── precompiles/    # Enshrined precompiled contracts
 │   ├── governance/     # Governance modules
@@ -244,3 +244,19 @@ scalable-rollup-framework/
 ## **Conclusion**
 
 The proposed rollup framework prioritizes scalability, modularity, and user experience, leveraging enshrined precompiled contracts and seamless wallet integration to create a cutting-edge layer-2 solution.
+
+
+touch contracts/precompiles/.gitkeep \
+      contracts/governance/.gitkeep \
+      contracts/verifier/.gitkeep \
+      sdk/wallet/.gitkeep \
+      sdk/utilities/.gitkeep \
+      services/batcher/.gitkeep \
+      services/relayer/.gitkeep \
+      tests/unit/.gitkeep \
+      tests/integration/.gitkeep \
+      scripts/.gitkeep \
+      config/contracts/.gitkeep \
+      config/environments/.gitkeep \
+      docs/.gitkeep \
+      README.md
