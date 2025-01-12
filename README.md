@@ -1,61 +1,108 @@
-# Scalable Rollup Framework with Enshrined Functionality
 
-## **Objective**
+# **Scalable Rollup Framework with Enshrined Functionality**
 
-Design and architect a production-grade, scalable rollup framework optimized for capital efficiency and user experience, featuring enshrined precompiled contracts for transaction batching and intent management.
+A next-generation **Layer 2 rollup framework** designed to optimize transaction scalability, capital efficiency, and user experience. Built with modular architecture, enshrined precompiled contracts, and seamless wallet integration, this framework delivers cutting-edge solutions for blockchain scaling.
+
+---
+
+## **Key Objectives**
+
+- Enhance scalability for decentralized applications by offloading transaction execution to Layer 2.
+- Introduce **enshrined precompiles** for fee optimization, transaction batching, and intent-based routing.
+- Enable modular governance and customizable transaction proof mechanisms.
 
 ---
 
 ## **Overview**
 
-### **Purpose**
+This Layer 2 rollup framework leverages Ethereum's security while providing faster and more cost-effective transaction processing. The system integrates **off-chain services**, **precompiled contracts**, and **developer-friendly tools**, making it ideal for dApps needing high performance and capital efficiency.
 
-- Provide a scalable layer-2 solution with enshrined functionality for fee optimization and transaction routing.
-- Enhance modularity for governance and transaction proof mechanisms.
-- Ensure seamless integration with popular wallets for user-friendly interactions.
+### **Core Components**
+
+1. **Enshrined Precompiles**: Built-in contracts for optimizing gas fees, intent batching, and routing.
+2. **Batcher Service**: Aggregates user transactions and submits them as efficient batches.
+3. **Verifier Module**: Supports fraud proofs and zk-proofs for transaction validation.
+4. **Governance Layer**: Enables stakeholders to manage upgrades and protocol parameters.
+5. **Wallet SDK**: Seamless wallet integration for a smooth user experience.
+
+---
+
+## **System Architecture**
+
+### **Layered Approach**
+
+1. **Layer 1 (Ethereum Mainnet)**:
+   - Provides security and finality.
+   - Handles dispute resolution and anchoring of rollup state.
+
+2. **Layer 2 (Rollup Framework)**:
+   - Processes transactions off-chain for scalability.
+   - Ensures integrity with fraud or zk-proofs.
+   - Manages fees and batching via precompiled contracts.
+
+3. **Off-Chain Services**:
+   - Relayer nodes communicate with Layer 1 for anchoring.
+   - Batcher compresses transactions for submission.
 
 ---
 
 ## **Key Features**
 
-### **Enshrined Precompiles**
+### **1. Enshrined Precompiles**
 
-- Precompiled contracts for:
-  - Fee optimization.
-  - Efficient transaction routing.
-  - Intent-based transaction batching.
+- **Optimized Gas Fees**: Minimize costs by reducing redundant operations.
+- **Intent-Based Transactions**: Support flexible transaction flows.
+- **Batching**: Aggregate multiple transactions into single submissions.
 
-### **Modular Architecture**
+### **2. Wallet Integration**
 
-- Plug-and-play governance mechanisms.
-- Support for various transaction proof strategies (e.g., fraud proofs, zk-rollups).
+- Native SDK for wallets like MetaMask and WalletConnect.
+- Provides user-friendly prompts and signing mechanisms.
 
-### **Wallet Integration**
+### **3. Modular Governance**
 
-- Out-of-the-box support for MetaMask and other popular wallets.
+- Stakeholder-driven upgrades and parameter management.
+- DAO support for decentralized decision-making.
 
-### **Developer Experience**
+### **4. Fraud/ZK Proofs**
 
-- Rollup SDK for easy customization.
-- Comprehensive documentation and tooling.
+- Ensures validity of transactions with tamper-proof mechanisms.
+- Balances security and efficiency.
+
+---
+
+## **Workflow**
+
+### **Transaction Flow**
+
+1. **User Interaction**:
+   - User submits transactions via a wallet.
+2. **Batcher Aggregation**:
+   - Combines transactions into batches.
+3. **Rollup Processing**:
+   - Executes transactions and applies precompiled logic.
+4. **Proof Validation**:
+   - Verifies transactions using zk-proofs or fraud proofs.
+5. **Final Settlement**:
+   - Periodically anchors rollup state to Layer 1 for security.
 
 ---
 
 ## **Tech Stack**
 
-| Component               | Technology/Tool           |
+| **Component**          | **Technology/Tool**       |
 |-------------------------|---------------------------|
-| **Smart Contracts**     | Solidity                 |
-| **Execution Environment** | EVM-compatible          |
-| **Frameworks**          | Rollup SDK, Hardhat/Foundry |
+| **Smart Contracts**     | Solidity, EVM-compatible |
+| **Frameworks**          | Rollup SDK, Hardhat      |
 | **Wallet Integration**  | MetaMask, WalletConnect  |
-| **Databases**           | PostgreSQL               |
-| **Message Queue**       | RabbitMQ/Kafka           |
+| **Database**            | PostgreSQL               |
+| **Messaging Queue**     | RabbitMQ, Kafka          |
 
 ---
 
-```plaintext
+## **Directory Structure**
 
+```plaintext
 ├── contracts/          # Solidity smart contracts
 │   ├── precompiles/    # Enshrined precompiled contracts
 │   ├── governance/     # Governance modules
@@ -75,188 +122,34 @@ Design and architect a production-grade, scalable rollup framework optimized for
 │   └── environments/   # Environment-specific configurations
 ├── docs/               # Documentation for the framework
 └── README.md           # Project overview
-
-
 ```
 
-## **System Architecture**
+---
 
-### **Layered Architecture**
+## **Getting Started**
 
-1. **Layer 1 (Ethereum Mainnet)**:
-   - Secure base layer for rollup anchoring.
-   - Finality and dispute resolution.
+### **Installation**
 
-2. **Layer 2 (Rollup Layer)**:
-   - Enshrined precompiles for efficient batching and routing.
-   - Modular components for governance and proof mechanisms.
+```bash
+git clone https://github.com/<your-repo>/scalable-rollup-framework.git
+cd scalable-rollup-framework
+npm install
+```
 
-3. **Off-Chain Services**:
-   - Relayer nodes for transaction batching.
-   - Off-chain data aggregation and compression services.
+### **Run Tests**
+
+```bash
+npm run test
+```
 
 ---
 
-## **Core Components**
+## **Contributing**
 
-### **Enshrined Precompiles**
-
-- **Functions**:
-  - Optimized gas fee calculation.
-  - Transaction routing based on user intent.
-  - Batching with minimal overhead.
-
-### **Batcher Service**
-
-- **Responsibilities**:
-  - Aggregating user transactions.
-  - Compressing and submitting batches to the rollup contract.
-
-### **Verifier**
-
-- **Role**:
-  - Validate transactions within batches.
-  - Apply fraud or zero-knowledge proofs.
-
-### **Governance Module**
-
-- **Features**:
-  - Manage upgradability.
-  - Allow stakeholders to vote on key decisions.
-
-### **Wallet SDK**
-
-- **Capabilities**:
-  - Integration with MetaMask and WalletConnect.
-  - Seamless transaction signing and submission.
+We welcome contributions! Check the `CONTRIBUTING.md` file for guidelines.
 
 ---
 
-## **Workflow**
+## **License**
 
-### **Transaction Flow**
-
-1. **User Interaction**:
-   - User creates a transaction via a wallet (e.g., MetaMask).
-   - Transaction intent is signed and sent to the batcher.
-
-2. **Batcher Processing**:
-   - Batcher aggregates multiple transactions.
-   - Compresses them into a single batch.
-   - Submits the batch to the Rollup contract.
-
-3. **Rollup Execution**:
-   - Rollup contract executes transactions.
-   - Applies precompiled logic for fee calculation and routing.
-
-4. **Proof Validation**:
-   - Verifier contract validates the correctness of transactions using fraud or zk-proofs.
-
-5. **Final Settlement**:
-   - State changes are periodically anchored to Layer 1.
-
----
-
-## **Scalability Considerations**
-
-### **Transaction Throughput**
-
-- Optimize precompiled contracts for low-latency routing.
-- Use batch compression to minimize calldata size.
-
-### **Capital Efficiency**
-
-- Use intent batching to reduce redundant operations.
-- Dynamic fee adjustment based on network conditions.
-
-### **Modular Governance**
-
-- Stake-based voting for upgrades and parameter adjustments.
-- Smart contract-based DAOs for automated governance.
-
----
-
-## **Security Measures**
-
-- **Audits**: Regular audits of smart contracts and off-chain services.
-- **Fraud/ZK Proofs**: Robust proof mechanisms for transaction validity.
-- **Dispute Resolution**: Enforce Layer 1-based finality and fraud detection.
-- **Rate Limiting**: Prevent spam transactions with per-address rate limits.
-
----
-
-## **Integration with Popular Wallets**
-
-### **MetaMask Integration**
-
-- Provide an SDK for seamless transaction submission.
-- Include custom transaction prompts for user clarity.
-
-### **Rollup SDK Features**
-
-- Prebuilt connectors for wallet APIs.
-- Utilities for intent-based transactions.
-
----
-
-## **Deployment Plan**
-
-### **Development Stages**
-
-1. **MVP Release**:
-   - Implement basic batching and routing functionality.
-   - Support MetaMask integration.
-
-2. **Feature Enhancements**:
-   - Add modular governance and transaction proof systems.
-   - Expand wallet support.
-
-3. **Production-Grade**:
-   - Optimize gas usage and proof generation.
-   - Ensure scalability with real-world workloads.
-
----
-
-## **Testing Strategy**
-
-- Unit testing with Hardhat.
-- Integration testing with WalletConnect and MetaMask.
-- Load testing for batcher and rollup components.
-
----
-
-## **Deployment Stages**
-
-1. Deploy smart contracts on Ethereum testnets (e.g., Goerli).
-2. Monitor performance and iterate.
-3. Transition to Ethereum mainnet.
-
----
-
-## **Future Enhancements**
-
-- Support for additional wallets (e.g., Coinbase Wallet).
-- Integration with DeFi protocols for enhanced liquidity.
-- Advanced analytics for transaction patterns and user behavior.
-
----
-
-## **Conclusion**
-
-The proposed rollup framework prioritizes scalability, modularity, and user experience, leveraging enshrined precompiled contracts and seamless wallet integration to create a cutting-edge layer-2 solution.
-
-
-touch contracts/precompiles/.gitkeep \
-      contracts/governance/.gitkeep \
-      contracts/verifier/.gitkeep \
-      sdk/wallet/.gitkeep \
-      sdk/utilities/.gitkeep \
-      services/batcher/.gitkeep \
-      services/relayer/.gitkeep \
-      tests/unit/.gitkeep \
-      tests/integration/.gitkeep \
-      scripts/.gitkeep \
-      config/contracts/.gitkeep \
-      config/environments/.gitkeep \
-      docs/.gitkeep \
-      README.md
+This project is licensed under the MIT License. See `LICENSE` for more details.
